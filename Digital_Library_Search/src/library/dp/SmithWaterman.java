@@ -1,0 +1,1 @@
+package library.dp; public class SmithWaterman { public int score(String a,String b){int[] p=new int[b.length()+1],q=new int[b.length()+1],best=new int[1];for(int i=1;i<=a.length();i++){for(int j=1;j<=b.length();j++){q[j]=Math.max(0,Math.max(p[j-1]+(a.charAt(i-1)==b.charAt(j-1)?2:-1),Math.max(p[j]-1,q[j-1]-1)));if(q[j]>best[0])best[0]=q[j];}int[] t=p;p=q;q=t;}return best[0];} } 

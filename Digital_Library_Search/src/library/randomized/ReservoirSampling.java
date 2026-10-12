@@ -1,0 +1,1 @@
+package library.randomized; public class ReservoirSampling {public int[] sample(int n,int k){int[]r=new int[k];for(int i=0;i<k;i++)r[i]=i;for(int i=k;i<n;i++){int j=(int)(Math.random()*(i+1));if(j<k)r[j]=i;}return r;}}

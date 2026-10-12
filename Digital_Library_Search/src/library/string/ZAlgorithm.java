@@ -1,0 +1,2 @@
+package library.string;
+public class ZAlgorithm { public boolean contains(String text,String pat){if(pat.length()==0)return true;String s=pat+'$'+text;int[] z=new int[s.length()];int l=0,r=0;for(int i=1;i<s.length();i++){if(i<=r)z[i]=Math.min(r-i+1,z[i-l]);while(i+z[i]<s.length()&&s.charAt(z[i])==s.charAt(i+z[i]))z[i]++;if(i+z[i]-1>r){l=i;r=i+z[i]-1;}if(z[i]==pat.length())return true;}return false;} }

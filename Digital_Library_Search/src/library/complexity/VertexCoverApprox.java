@@ -1,0 +1,1 @@
+package library.complexity; public class VertexCoverApprox {public int approximate(boolean[][]g){int n=g.length,c=0;boolean[] used=new boolean[n];for(int u=0;u<n;u++)for(int v=u+1;v<n;v++)if(g[u][v]&&!used[u]&&!used[v]){used[u]=used[v]=true;c+=2;}return c;}}

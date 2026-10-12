@@ -1,0 +1,1 @@
+package library.complexity; public class Knapsack {public int solve(int[]w,int[]v,int cap){int[]d=new int[cap+1];for(int i=0;i<w.length;i++)for(int c=cap;c>=w[i];c--)d[c]=Math.max(d[c],d[c-w[i]]+v[i]);return d[cap];}}

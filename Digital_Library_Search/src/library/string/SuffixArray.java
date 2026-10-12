@@ -1,0 +1,2 @@
+package library.string;
+public class SuffixArray { public int[] build(String s){int n=s.length();IntegerBox[] a=new IntegerBox[n];for(int i=0;i<n;i++)a[i]=new IntegerBox(i,s.substring(i));for(int i=0;i<n;i++)for(int j=i+1;j<n;j++)if(a[j].s.compareTo(a[i].s)<0){IntegerBox t=a[i];a[i]=a[j];a[j]=t;}int[] r=new int[n];for(int i=0;i<n;i++)r[i]=a[i].i;return r;} static class IntegerBox{int i;String s;IntegerBox(int i,String s){this.i=i;this.s=s;}} }

@@ -1,0 +1,1 @@
+package library.complexity; public class SubsetSum {public boolean solve(int[]a,int target){boolean[]d=new boolean[target+1];d[0]=true;for(int x:a)for(int s=target;s>=x;s--)d[s]|=d[s-x];return d[target];}}

@@ -1,0 +1,1 @@
+package library.dp; public class NeedlemanWunsch { public int score(String a,String b){int[] p=new int[b.length()+1],q=new int[b.length()+1];for(int j=0;j<=b.length();j++)p[j]=-j;for(int i=1;i<=a.length();i++){q[0]=-i;for(int j=1;j<=b.length();j++)q[j]=Math.max(p[j-1]+(a.charAt(i-1)==b.charAt(j-1)?1:-1),Math.max(p[j]-1,q[j-1]-1));int[] t=p;p=q;q=t;}return p[b.length()];} } 

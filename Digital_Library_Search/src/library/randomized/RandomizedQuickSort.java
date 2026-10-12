@@ -1,0 +1,1 @@
+package library.randomized; public class RandomizedQuickSort {public void sort(int[]a){sort(a,0,a.length-1);}private void sort(int[]a,int l,int r){if(l>=r)return;int p=l+(int)(Math.random()*(r-l+1));int t=a[p];a[p]=a[r];a[r]=t;int i=l;for(int j=l;j<r;j++)if(a[j]<a[r]){t=a[i];a[i++]=a[j];a[j]=t;}t=a[i];a[i]=a[r];a[r]=t;sort(a,l,i-1);sort(a,i+1,r);}}

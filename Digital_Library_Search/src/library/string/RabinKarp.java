@@ -1,0 +1,2 @@
+package library.string;
+public class RabinKarp { public boolean contains(String t,String p){if(p.length()==0)return true;if(p.length()>t.length())return false;long mod=1000000007L,base=911382323L,ph=0,th=0,pow=1;for(int i=0;i<p.length();i++){ph=(ph*base+p.charAt(i))%mod;th=(th*base+t.charAt(i))%mod;if(i<p.length()-1)pow=pow*base%mod;}for(int i=0;i<=t.length()-p.length();i++){if(ph==th&&t.regionMatches(true,i,p,0,p.length()))return true;if(i<t.length()-p.length()){th=(th-t.charAt(i)*pow%mod+mod)%mod;th=(th*base+t.charAt(i+p.length()))%mod;}}return false;} }
